@@ -1,0 +1,24 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# SASS
+*.css
+*.css.map
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Arquivos temporários
+*.log
+*.tmp
+*~
+
+# Produção futura
+/dist
+/build

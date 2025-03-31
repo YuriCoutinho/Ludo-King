@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ludo King</title>
+    <link rel="stylesheet" href="./dist/main.css">
+    <script src="./src/main.js" type="module" defer></script>
 </head>
 <body>
-    <h1>Ludo King</h1>
+    <main class="ludo-king">
+        <section class="board">
+          <!-- elementos do tabuleiro -->
+        </section>
+
+        <section class="dice">
+          <div class="dice__face">
+            <img class="dice__dot dice__dot--one dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
+            <img class="dice__dot dice__dot--two dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
+            <img class="dice__dot dice__dot--three dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
+            <img class="dice__dot dice__dot--four dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
+            <img class="dice__dot dice__dot--five" src="./public/assets/svg/circle_white.svg" alt="">
+            <img class="dice__dot dice__dot--six dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
+            <img class="dice__dot dice__dot--seven dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
+            <img class="dice__dot dice__dot--eight dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
+            <img class="dice__dot dice__dot--nine dice__dot--hidden"  src="./public/assets/svg/circle_white.svg" alt="">
+          </div>
+
+          <button class="dice__button" aria-label="Lançar dado">Lançar</button>
+        </section>
+      </main>
 </body>
 </html>

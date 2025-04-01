@@ -1,0 +1,13 @@
+@use '../abstracts/colors' as colors;
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle, colors.$accent-blue 0%, colors.$dark-blue 100%);
+    min-height: 100dvh;
+}

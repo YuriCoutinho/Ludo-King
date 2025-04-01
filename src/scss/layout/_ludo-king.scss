@@ -1,0 +1,111 @@
+@use '../abstracts/colors' as colors;
+
+.ludo-king {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+
+    .board {
+        min-height: 40rem;
+        min-width: 40rem;
+        border: 1px solid black;
+    }
+
+    .dice {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.6rem;
+
+        &__face {
+            display: grid;
+            grid-template-areas:
+                "one two three"
+                "four five six"
+                "seven eight nine";
+            background-color: colors.$black;
+            width: 9rem;
+            height: 9rem;
+            align-items: center;
+            border-radius: 2rem;
+            padding: 0.6rem;
+        }
+
+        &__dot {
+            display: flex;
+            align-self: center;
+            justify-self: center;
+            height: 15px;
+            transition: opacity 0.1s ease;
+
+            &--hidden {
+                opacity: 0;
+            }
+
+            &--one {
+                grid-area: one;
+            }
+
+            &--two {
+                grid-area: two;
+            }
+
+            &--three {
+                grid-area: three;
+            }
+
+            &--four {
+                grid-area: four;
+            }
+
+            &--five {
+                grid-area: five;
+            }
+
+            &--six {
+                grid-area: six;
+            }
+
+            &--seven {
+                grid-area: seven;
+            }
+
+            &--eight {
+                grid-area: eight;
+            }
+
+            &--nine {
+                grid-area: nine;
+            }
+        }
+
+        &__button {
+            background-color: colors.$white;
+            color: colors.$dark-grey;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+
+            &:hover {
+                background-color: colors.$light-grey;
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+
+            &:disabled {
+                background-color: colors.$light-grey;
+                color: colors.$grey;
+                cursor: not-allowed;
+                opacity: 0.6;
+                pointer-events: none;
+            }
+        }
+    }
+}

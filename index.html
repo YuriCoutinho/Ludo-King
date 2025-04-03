@@ -1,33 +1,749 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ludo King</title>
-    <link rel="stylesheet" href="./dist/main.css">
+    <link rel="stylesheet" href="./dist/main.css" />
     <script src="./src/main.js" type="module" defer></script>
-</head>
-<body>
-    <main class="ludo-king">
-        <section class="board">
-          <!-- elementos do tabuleiro -->
-        </section>
+  </head>
 
-        <section class="dice">
-          <div class="dice__face">
-            <img class="dice__dot dice__dot--one dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
-            <img class="dice__dot dice__dot--two dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
-            <img class="dice__dot dice__dot--three dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
-            <img class="dice__dot dice__dot--four dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
-            <img class="dice__dot dice__dot--five" src="./public/assets/svg/circle_white.svg" alt="">
-            <img class="dice__dot dice__dot--six dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
-            <img class="dice__dot dice__dot--seven dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
-            <img class="dice__dot dice__dot--eight dice__dot--hidden" src="./public/assets/svg/circle_white.svg" alt="">
-            <img class="dice__dot dice__dot--nine dice__dot--hidden"  src="./public/assets/svg/circle_white.svg" alt="">
+  <body>
+    <main class="ludo-king">
+      <section class="board">
+        <div class="board__blue-team">
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#00acff"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+       C0 86 86 0 192 0S384 86 384 192z"
+                fill="#00acff"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
           </div>
 
-          <button class="dice__button" aria-label="Lançar dado">Lançar</button>
-        </section>
-      </main>
-</body>
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#00acff"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+       C0 86 86 0 192 0S384 86 384 192z"
+                fill="#00acff"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#00acff"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+       C0 86 86 0 192 0S384 86 384 192z"
+                fill="#00acff"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#00acff"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+     C0 86 86 0 192 0S384 86 384 192z"
+                fill="#00acff"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="board__path-1">
+          <div data-square="1" class="board__path-square"></div>
+          <div
+            data-square="2"
+            class="board__path-square board__red-final-path"
+          ></div>
+          <div data-square="3" class="board__path-square"></div>
+          <div data-square="4" class="board__path-square"></div>
+          <div data-square="5" class="board__path-square"></div>
+          <div data-square="6" class="board__path-square"></div>
+          <div data-square="7" class="board__path-square"></div>
+          <div
+            data-square="8"
+            class="board__path-square board__red-final-path"
+          ></div>
+          <div
+            data-square="9"
+            class="board__path-square board__red-final-path"
+          ></div>
+          <div
+            data-square="10"
+            class="board__path-square board__red-final-path"
+          ></div>
+          <div
+            data-square="11"
+            class="board__path-square board__red-final-path"
+          ></div>
+          <div
+            data-square="12"
+            class="board__path-square board__path-square--final-red board__red-final-path"
+          ></div>
+          <div data-square="13" class="board__path-square"></div>
+          <div data-square="14" class="board__path-square"></div>
+          <div
+            data-square="15"
+            class="board__path-square board__path-square--svg"
+          ></div>
+          <div data-square="16" class="board__path-square"></div>
+          <div data-square="17" class="board__path-square"></div>
+          <div data-square="18" class="board__path-square"></div>
+        </div>
+
+        <div class="board__red-team">
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#fa0000"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#fa0000"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#fa0000"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#fa0000"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#fa0000"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#fa0000"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#fa0000"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#fa0000"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="board__path-2">
+          <div data-square="19" class="board__path-square"></div>
+          <div data-square="20" class="board__path-square"></div>
+          <div data-square="21" class="board__path-square"></div>
+          <div data-square="22" class="board__path-square"></div>
+          <div
+            data-square="23"
+            class="board__path-square board__green-final-path"
+          ></div>
+          <div
+            data-square="24"
+            class="board__path-square board__green-final-path"
+          ></div>
+          <div
+            data-square="25"
+            class="board__path-square board__path-square--svg"
+          ></div>
+          <div
+            data-square="26"
+            class="board__path-square board__green-final-path"
+          ></div>
+          <div data-square="27" class="board__path-square"></div>
+          <div data-square="28" class="board__path-square"></div>
+          <div
+            data-square="29"
+            class="board__path-square board__green-final-path"
+          ></div>
+          <div data-square="30" class="board__path-square"></div>
+          <div data-square="31" class="board__path-square"></div>
+          <div
+            data-square="32"
+            class="board__path-square board__green-final-path"
+          ></div>
+          <div data-square="33" class="board__path-square"></div>
+          <div data-square="34" class="board__path-square"></div>
+          <div
+            data-square="35"
+            class="board__path-square board__green-final-path board__path-square--final-green"
+          ></div>
+          <div data-square="36" class="board__path-square"></div>
+        </div>
+
+        <div class="board__final-area">
+          <div class="board__triangle board__triangle--top"></div>
+          <div class="board__triangle board__triangle--bottom"></div>
+          <div class="board__triangle board__triangle--left"></div>
+          <div class="board__triangle board__triangle--right"></div>
+        </div>
+
+        <div class="board__green-team">
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#009a2a"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#009a2a"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#009a2a"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+            C0 86 86 0 192 0S384 86 384 192z"
+                fill="#009a2a"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#009a2a"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+            C0 86 86 0 192 0S384 86 384 192z"
+                fill="#009a2a"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#009a2a"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+            C0 86 86 0 192 0S384 86 384 192z"
+                fill="#009a2a"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="board__path-3">
+          <div data-square="37" class="board__path-square"></div>
+          <div data-square="38" class="board__path-square"></div>
+          <div data-square="39" class="board__path-square"></div>
+          <div
+            data-square="40"
+            class="board__path-square board__path-square--svg"
+          ></div>
+          <div data-square="41" class="board__path-square"></div>
+          <div data-square="42" class="board__path-square"></div>
+          <div
+            data-square="43"
+            class="board__path-square board__yellow-final-path board__path-square--final-yellow"
+          ></div>
+          <div
+            data-square="44"
+            class="board__path-square board__yellow-final-path"
+          ></div>
+          <div
+            data-square="45"
+            class="board__path-square board__yellow-final-path"
+          ></div>
+          <div
+            data-square="46"
+            class="board__path-square board__yellow-final-path"
+          ></div>
+          <div
+            data-square="47"
+            class="board__path-square board__yellow-final-path"
+          ></div>
+          <div data-square="48" class="board__path-square"></div>
+          <div data-square="49" class="board__path-square"></div>
+          <div data-square="50" class="board__path-square"></div>
+          <div data-square="51" class="board__path-square"></div>
+          <div data-square="52" class="board__path-square"></div>
+          <div
+            data-square="53"
+            class="board__path-square board__yellow-final-path"
+          ></div>
+          <div data-square="54" class="board__path-square"></div>
+        </div>
+
+        <div class="board__yellow-team">
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#fee800"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#fee800"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#fee800"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#fee800"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#fee800"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#fee800"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+          <div class="board__pin-circle-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="64"
+              height="64"
+              class="board__circle"
+            >
+              <path
+                fill="#fee800"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
+              />
+            </svg>
+            <svg
+              class="board__pin"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-8 -8 400 528"
+              width="64"
+              height="64"
+              style="overflow: visible"
+            >
+              <path
+                d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192
+              C0 86 86 0 192 0S384 86 384 192z"
+                fill="#fee800"
+                stroke="#ffffff"
+                stroke-width="20"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="board__path-4">
+          <div data-square="55" class="board__path-square"></div>
+          <div
+            data-square="56"
+            class="board__path-square board__blue-final-path board__path-square--final-blue"
+          ></div>
+          <div data-square="57" class="board__path-square"></div>
+          <div data-square="58" class="board__path-square"></div>
+          <div
+            data-square="59"
+            class="board__path-square board__blue-final-path"
+          ></div>
+          <div data-square="60" class="board__path-square"></div>
+          <div data-square="61" class="board__path-square"></div>
+          <div
+            data-square="62"
+            class="board__path-square board__blue-final-path"
+          ></div>
+          <div data-square="63" class="board__path-square"></div>
+          <div data-square="64" class="board__path-square"></div>
+          <div
+            data-square="65"
+            class="board__path-square board__blue-final-path"
+          ></div>
+          <div
+            data-square="66"
+            class="board__path-square board__path-square--svg"
+          ></div>
+          <div
+            data-square="67"
+            class="board__path-square board__blue-final-path"
+          ></div>
+          <div
+            data-square="68"
+            class="board__path-square board__blue-final-path"
+          ></div>
+          <div data-square="69" class="board__path-square"></div>
+          <div data-square="70" class="board__path-square"></div>
+          <div data-square="71" class="board__path-square"></div>
+          <div data-square="72" class="board__path-square"></div>
+        </div>
+      </section>
+
+      <section class="dice">
+        <div class="dice__face">
+          <img
+            class="dice__dot dice__dot--one dice__dot--hidden"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+          <img
+            class="dice__dot dice__dot--two dice__dot--hidden"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+          <img
+            class="dice__dot dice__dot--three dice__dot--hidden"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+          <img
+            class="dice__dot dice__dot--four dice__dot--hidden"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+          <img
+            class="dice__dot dice__dot--five"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+          <img
+            class="dice__dot dice__dot--six dice__dot--hidden"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+          <img
+            class="dice__dot dice__dot--seven dice__dot--hidden"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+          <img
+            class="dice__dot dice__dot--eight dice__dot--hidden"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+          <img
+            class="dice__dot dice__dot--nine dice__dot--hidden"
+            src="./public/assets/svg/circle_white.svg"
+            alt=""
+          />
+        </div>
+
+        <button class="dice__button" aria-label="Lançar dado">Lançar</button>
+      </section>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,21 @@
+%grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%circle-size {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+%pin-size {
+    height: 3rem;
+    width: 3rem;
+}

@@ -1,0 +1,12 @@
+@mixin path-border($top: 1px, $right: 1px, $bottom: 1px, $left: 1px, $color: colors.$grey) {
+    border-width: $top $right $bottom $left;
+    border-style: solid;
+    border-color: $color;
+}
+
+@mixin path-background($image) {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(#{$image});
+    background-size: contain;
+}

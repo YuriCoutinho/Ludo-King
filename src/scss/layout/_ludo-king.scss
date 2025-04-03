@@ -1,16 +1,228 @@
-@use '../abstracts/colors' as colors;
+@use '../abstracts/_colors' as colors;
+@use '../abstracts/_mixins' as mixins;
+@use '../abstracts/_placeholders' as *;
 
 .ludo-king {
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 3.2rem;
 
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+
     .board {
-        min-height: 40rem;
-        min-width: 40rem;
-        border: 1px solid black;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 2fr 1fr 2fr;
+        height: 40rem;
+        width: 40rem;
+
+        &__pin-circle-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: white;
+        }
+
+        &__circle {
+            @extend %circle-size;
+        }
+
+        &__pin {
+            @extend %pin-size;
+            position: absolute;
+            top: 3px;
+        }
+
+        &__blue-team {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            background-color: colors.$blue;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        &__path-square {
+            @include mixins.path-border(1px, 1px, 0, 0, colors.$grey);
+
+            &--svg {
+                @include mixins.path-background('../../../public/assets/svg/star.svg');
+            }
+
+            &--final-red {
+                border-right: none;
+            }
+
+            &--final-green {
+                border-bottom: none;
+            }
+
+            &--final-yellow {
+                border-left: none;
+            }
+
+            &--final-blue {
+                border-top: none;
+            }
+        }
+
+        &__path-1 {
+            background-color: white;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        &__red-team {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            background-color: colors.$red;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        &__red-final-path {
+            background-color: colors.$red;
+        }
+
+        &__path-2 {
+            background-color: white;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        &__green-team {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            background-color: colors.$green;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        &__green-final-path {
+            background-color: colors.$green;
+        }
+
+        &__path-3 {
+            background-color: white;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 3;
+            grid-column-end: 4;
+
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        &__yellow-final-path {
+            background-color: colors.$yellow;
+        }
+
+        &__path-4 {
+            background-color: white;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+
+        &__blue-final-path {
+            background-color: colors.$blue;
+        }
+
+        &__yellow-team {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            background-color: colors.$yellow;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 2rem;
+            align-items: center;
+        }
+
+        &__final-area {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__triangle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            &--top {
+                background: colors.$green;
+                clip-path: polygon(0 0, 100% 0, 50% 50%);
+            }
+
+            &--bottom {
+                background: colors.$blue;
+                clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+            }
+
+            &--left {
+                background: colors.$red;
+                clip-path: polygon(0 0, 0 100%, 50% 50%);
+            }
+
+            &--right {
+                background: colors.$yellow;
+                clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+                border-left: 1px solid yellow;
+            }
+        }
     }
 
     .dice {

@@ -34,10 +34,26 @@
             @extend %circle-size;
         }
 
+
+
         &__pin {
             @extend %pin-size;
             position: absolute;
             top: 3px;
+
+            @keyframes pulsate {
+                0%, 100% {
+                  filter: drop-shadow(0 0 0 #00acff);
+                }
+                50% {
+                  filter: drop-shadow(0 0 10px #00acff);
+                }
+            }
+
+            &--highlight{
+                animation: pulsate 2s infinite;
+
+            }
         }
 
         &__blue-team {
@@ -55,6 +71,7 @@
         }
 
         &__path-square {
+            position: relative;
             @include mixins.path-border(1px, 1px, 0, 0, colors.$grey);
 
             &--svg {
@@ -104,7 +121,7 @@
             align-items: center;
         }
 
-        &__red-final-path {
+        &__red-final-path, &__red-initial-path {
             background-color: colors.$red;
         }
 
@@ -134,7 +151,7 @@
             align-items: center;
         }
 
-        &__green-final-path {
+        &__green-final-path, &__green-initial-path{
             background-color: colors.$green;
         }
 
@@ -150,7 +167,7 @@
             grid-template-rows: repeat(3, 1fr);
         }
 
-        &__yellow-final-path {
+        &__yellow-final-path, &__yellow-initial-path {
             background-color: colors.$yellow;
         }
 
@@ -166,7 +183,7 @@
             grid-template-rows: repeat(6, 1fr);
         }
 
-        &__blue-final-path {
+        &__blue-final-path, &__blue-initial-path {
             background-color: colors.$blue;
         }
 

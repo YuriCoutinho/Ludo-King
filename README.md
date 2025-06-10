@@ -1,4 +1,4 @@
-# 🎲 Ludo Game (Projeto Solo)
+# 🎲 Ludo Game
 
 Este é um projeto pessoal desenvolvido com o objetivo de construir o jogo clássico **Ludo** utilizando apenas tecnologias do lado do cliente (**HTML5**, **CSS3/SCSS** e **JavaScript puro**). A proposta é entregar um jogo completo, funcional e visualmente organizado, sem depender de frameworks ou bibliotecas externas.
 
